@@ -1,6 +1,6 @@
 {
   "name": "@imnotteixeira/covid-19-simulator-cli",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "CLI for the covid-19 simulator https://github.com/imnotteixeira/covid-19-simulator.js",
   "main": "src/index.js",
   "scripts": {
@@ -20,7 +20,7 @@
     "eslint": "^6.8.0"
   },
   "dependencies": {
-    "@imnotteixeira/covid-19-simulator": "^0.5.1",
+    "@imnotteixeira/covid-19-simulator": "^0.5.4",
     "dotenv-flow": "^3.1.0"
   }
 }
