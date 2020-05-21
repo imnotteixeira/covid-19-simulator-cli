@@ -8,6 +8,7 @@ const simulationData = init({
     hygieneDisregard: config.HYGIENE_DISREGARD,
     hospitalEffectiveness: config.HOSPITAL_EFFECTIVENESS,
     hospitalCapacity: config.HOSPITAL_CAPACITY,
+    populationPreset: config.POPULATION_PRESET,
 });
 
 if (simulationData.population.length > 100) {
