@@ -9,6 +9,13 @@ const simulationData = init({
     hospitalEffectiveness: config.HOSPITAL_EFFECTIVENESS,
     hospitalCapacity: config.HOSPITAL_CAPACITY,
     populationPreset: config.POPULATION_PRESET,
+    incubationPeriod: config.INCUBATION_PERIOD,
+    infectionPeriod: config.INFECTION_PERIOD,
+    quarantineEffectiveness: config.QUARANTINE_EFFECTIVENESS,
+    quarantinePeriod: config.QUARANTINE_PERIOD,
+    quarantineDelay: config.QUARANTINE_DELAY,
+    quarantineType: config.QUARANTINE_TYPE,
+    quarantinePercentage: config.QUARANTINE_PERCENTAGE,
 });
 
 if (simulationData.population.length > 100) {
