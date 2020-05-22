@@ -26,6 +26,8 @@ MetricsService.subscribe("carrier-count");
 MetricsService.subscribe("dead-count");
 MetricsService.subscribe("cured-count");
 MetricsService.subscribe("hospitalized-count");
+MetricsService.subscribe("r0");
+MetricsService.subscribe("r");
 
 simulate(simulationData, config.MAX_STEPS, {
     stepEnd: (simulationData) => {
