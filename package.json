@@ -4,7 +4,9 @@
   "description": "CLI for the covid-19 simulator https://github.com/imnotteixeira/covid-19-simulator.js",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "export": "node src/web-output/index.js",
+    "build": "webpack --config webpack.config.js --mode production"
   },
   "repository": {
     "type": "git",
@@ -17,10 +19,21 @@
   },
   "homepage": "https://github.com/imnotteixeira/covid-19-simulator-cli#readme",
   "devDependencies": {
-    "eslint": "^6.8.0"
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.20.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
   },
   "dependencies": {
     "@imnotteixeira/covid-19-simulator": "^0.5.4",
-    "dotenv-flow": "^3.1.0"
+    "dotenv-flow": "^3.1.0",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }
