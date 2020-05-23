@@ -1,14 +1,14 @@
 const path = require("path");
-const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    // node: { fs: "empty" },
+    mode: "production",
     entry: {
         main: path.resolve(__dirname, "src/web-output/components/index.js"),
     },
     output: {
         path: path.resolve(__dirname, "out"),
     },
+
     module: {
         rules: [
             {
