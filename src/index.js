@@ -28,6 +28,7 @@ MetricsService.subscribe("carrier-count");
 MetricsService.subscribe("dead-count");
 MetricsService.subscribe("cured-count");
 MetricsService.subscribe("hospitalized-count");
+MetricsService.subscribe("quarantined-count");
 MetricsService.subscribe("r0");
 MetricsService.subscribe("r");
 MetricsService.subscribe("positive-test-count");
