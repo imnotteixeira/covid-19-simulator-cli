@@ -1,12 +1,15 @@
 {
   "name": "@imnotteixeira/covid-19-simulator-cli",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "CLI for the covid-19 simulator https://github.com/imnotteixeira/covid-19-simulator.js",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
     "export": "node src/web-output/index.js",
     "build": "webpack --config webpack.config.js --mode production"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "repository": {
     "type": "git",

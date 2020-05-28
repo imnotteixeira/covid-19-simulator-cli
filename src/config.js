@@ -16,4 +16,6 @@ module.exports = {
     QUARANTINE_DELAY: parseInt(process.env.QUARANTINE_DELAY, 10),
     QUARANTINE_TYPE: process.env.QUARANTINE_TYPE,
     QUARANTINE_PERCENTAGE: parseFloat(process.env.QUARANTINE_PERCENTAGE),
+    TEST_RATE: parseInt(process.env.TEST_RATE, 10),
+    TEST_COOLDOWN: parseInt(process.env.TEST_COOLDOWN, 10),
 };

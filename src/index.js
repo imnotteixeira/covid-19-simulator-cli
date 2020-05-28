@@ -16,6 +16,8 @@ const simulationData = init({
     quarantineDelay: config.QUARANTINE_DELAY,
     quarantineType: config.QUARANTINE_TYPE,
     quarantinePercentage: config.QUARANTINE_PERCENTAGE,
+    testRate: config.TEST_RATE,
+    testCooldown: config.TEST_COOLDOWN,
 });
 
 if (simulationData.population.length > 100) {
@@ -28,10 +30,14 @@ MetricsService.subscribe("cured-count");
 MetricsService.subscribe("hospitalized-count");
 MetricsService.subscribe("r0");
 MetricsService.subscribe("r");
+MetricsService.subscribe("positive-test-count");
+MetricsService.subscribe("total-test-count");
+MetricsService.subscribe("confirmed-carrier-count");
 
 simulate(simulationData, config.MAX_STEPS, {
     stepEnd: (simulationData) => {
         if (simulationData.population.length <= 100) {
+            console.info("Step:", simulationData.step);
             displayMatrix(simulationData.population);
         }
     },
