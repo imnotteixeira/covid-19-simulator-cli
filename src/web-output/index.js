@@ -1,4 +1,4 @@
-const fs = require("fs");
+const fs = require("fs").promises;
 const path = require("path");
 const webpack = require("webpack");
 const webpack_config = require("../../webpack.config");
@@ -10,11 +10,10 @@ webpack(webpack_config).run((err, stats) => {
 
 const OUTPUT_PATH = path.resolve(__dirname, "../../out");
 
-const exportHTML = () => {
-    fs.writeFileSync(`${OUTPUT_PATH}/index.html`,
-        template("My Title", { metrics: [{ id: "test", data: [{ x: 0, y: 1 }, { x: 1, y: 2 }, { x: 2, y: 3 }] }] }));
+const exportHTML = async ({ metrics }) => {
+    await fs.writeFile(`${OUTPUT_PATH}/index.html`,
+        template("My Title", { metrics }));
 };
 
-exportHTML();
 
 module.exports = exportHTML;

@@ -1,6 +1,17 @@
 const config = require("./config");
 const { displayMatrix } = require("./utils");
 const { init, simulate, MetricsService } = require("@imnotteixeira/covid-19-simulator");
+const exportHTML = require("./web-output");
+
+const { Command } = require("commander");
+const version = require("../package.json").version;
+const program = new Command();
+program
+    .version(version)
+    .option("-w, --web", "Generate static HTML with results")
+    .option("-v, --verbose", "Print metric results");
+
+program.parse(process.argv);
 
 const simulationData = init({
     populationSize: config.POPULATION_SIZE,
@@ -45,6 +56,15 @@ simulate(simulationData, config.MAX_STEPS, {
 });
 
 const metricValues = MetricsService.export();
-for (const metric of metricValues) {
-    console.info(`[${metric.id}] ${metric.data}`);
+
+if (program.verbose) {
+    for (const metric of metricValues) {
+        console.info(`[${metric.id}] ${metric.data}`);
+    }
+}
+
+if (program.web) {
+    console.info("Generating HTML file with results...");
+    exportHTML({ metrics: metricValues.map(({ id, data }) => ({ id, data: data.map((n, i) => ({ x: i, y: n })) })) })
+        .then(() => console.info("HTML generated, check out/ folder."));
 }
