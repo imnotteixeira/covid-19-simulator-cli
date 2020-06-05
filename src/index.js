@@ -1,6 +1,6 @@
 const config = require("./config");
 const { displayMatrix } = require("./utils");
-const { init, simulate, MetricsService } = require("@imnotteixeira/covid-19-simulator");
+const { init, simulate, MetricsService, SimulationPresets } = require("@imnotteixeira/covid-19-simulator");
 const exportHTML = require("./web-output");
 
 const { Command } = require("commander");
@@ -13,7 +13,7 @@ program
 
 program.parse(process.argv);
 
-const simulationData = init({
+const options = (config.SIMULATION_PRESET) ? { ...SimulationPresets[config.SIMULATION_PRESET] } : {
     populationSize: config.POPULATION_SIZE,
     spreadRadius: config.SPREAD_RADIUS,
     hygieneDisregard: config.HYGIENE_DISREGARD,
@@ -29,7 +29,9 @@ const simulationData = init({
     quarantinePercentage: config.QUARANTINE_PERCENTAGE,
     testRate: config.TEST_RATE,
     testCooldown: config.TEST_COOLDOWN,
-});
+};
+
+const simulationData = init(options);
 
 if (simulationData.population.length > 100) {
     console.info("Population too big. Will not render population on each step.");
