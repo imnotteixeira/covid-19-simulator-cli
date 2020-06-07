@@ -45,26 +45,31 @@ MetricsService.subscribe("r");
 MetricsService.subscribe("positive-test-count");
 MetricsService.subscribe("total-test-count");
 MetricsService.subscribe("confirmed-carrier-count");
+MetricsService.subscribe("carriers-history");
+
+const renderMatrix = (simulationData) => {
+    if (simulationData.population.length <= 100) {
+        console.info("Step:", simulationData.step);
+        displayMatrix(simulationData.population);
+    }
+};
 
 simulate(simulationData, config.MAX_STEPS, {
-    stepEnd: (simulationData) => {
-        if (simulationData.population.length <= 100) {
-            console.info("Step:", simulationData.step);
-            displayMatrix(simulationData.population);
-        }
-    },
+    stepEnd: renderMatrix,
+    onSimulationStart: renderMatrix,
 });
 
 const metricValues = MetricsService.export();
 
 if (program.verbose) {
-    for (const metric of metricValues) {
-        console.info(`[${metric.id}] ${metric.data}`);
+    const metricValues = MetricsService.export();
+    for (const metricId in metricValues) {
+        console.info(`[${metricId}] ${metricValues[metricId]}`);
     }
 }
 
 if (program.web) {
     console.info("Generating HTML file with results...");
-    exportHTML({ metrics: metricValues.map(({ id, data }) => ({ id, data: data.map((n, i) => ({ x: i, y: n })) })) })
+    exportHTML({ metrics: metricValues })
         .then(() => console.info("HTML generated, check out/ folder."));
 }

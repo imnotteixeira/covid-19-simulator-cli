@@ -8,7 +8,13 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, "out"),
     },
-
+    resolve: {
+        alias: {
+            "@material-ui/core": path.resolve(__dirname, "./node_modules/@material-ui/core"),
+            "react": path.resolve(__dirname, "./node_modules/react"),
+            "react-router-dom": path.resolve(__dirname, "./node_modules/react-router-dom"),
+        },
+    },
     module: {
         rules: [
             {
