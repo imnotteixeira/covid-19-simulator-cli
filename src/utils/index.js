@@ -26,8 +26,7 @@ const displayMatrix = (m) => {
     for (let i = 0; i < config.MATRIX_SIDE; i++) {
         let str = "";
         for (let j = 0; j < config.MATRIX_SIDE; j++) {
-            str += `${getRepresentation(m[convertToLinearCoord([i, j])])}, `;
-
+            str += `${getRepresentation(m[convertToLinearCoord([i, j])])} (${m[convertToLinearCoord([i, j])].zone}), `;
         }
         console.info(str);
     }

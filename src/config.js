@@ -19,4 +19,8 @@ module.exports = {
     TEST_RATE: parseInt(process.env.TEST_RATE, 10),
     TEST_COOLDOWN: parseInt(process.env.TEST_COOLDOWN, 10),
     SIMULATION_PRESET: process.env.SIMULATION_PRESET,
+    NUM_ZONES: parseInt(process.env.NUM_ZONES, 10),
+    ZONE_ISOLATION_BEHAVIOR: process.env.ZONE_ISOLATION_BEHAVIOR,
+    ZONE_ISOLATION_THRESHOLD: parseFloat(process.env.ZONE_ISOLATION_THRESHOLD),
+    ZONE_ISOLATION_TIMEOUT: parseInt(process.env.ZONE_ISOLATION_TIMEOUT, 10),
 };

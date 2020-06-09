@@ -29,6 +29,10 @@ const options = (config.SIMULATION_PRESET) ? { ...SimulationPresets[config.SIMUL
     quarantinePercentage: config.QUARANTINE_PERCENTAGE,
     testRate: config.TEST_RATE,
     testCooldown: config.TEST_COOLDOWN,
+    numberOfZones: config.NUM_ZONES,
+    zoneIsolationBehavior: config.ZONE_ISOLATION_BEHAVIOR,
+    zoneIsolationThreshold: config.ZONE_ISOLATION_THRESHOLD,
+    zoneIsolationTimeout: config.ZONE_ISOLATION_TIMEOUT,
 };
 
 const simulationData = init(options);
