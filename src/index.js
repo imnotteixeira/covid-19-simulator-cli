@@ -72,6 +72,6 @@ if (program.verbose) {
 
 if (program.web) {
     console.info("Generating HTML file with results...");
-    exportHTML({ metrics: metricValues })
+    exportHTML({ metrics: metricValues, simulationState: simulationData })
         .then(() => console.info("HTML generated, check out/ folder."));
 }

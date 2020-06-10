@@ -1,6 +1,6 @@
 {
   "name": "@imnotteixeira/covid-19-simulator-cli",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "CLI for the covid-19 simulator https://github.com/imnotteixeira/covid-19-simulator.js",
   "main": "src/index.js",
   "scripts": {
@@ -31,8 +31,8 @@
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
-    "@imnotteixeira/covid-19-simulator": "^0.5.4",
-    "@imnotteixeira/covid-19-simulator-ui-components": "^0.1.2",
+    "@imnotteixeira/covid-19-simulator": "^0.9.1",
+    "@imnotteixeira/covid-19-simulator-ui-components": "^0.4.0",
     "@material-ui/core": "^4.10.1",
     "babel-loader": "^8.1.0",
     "commander": "^5.1.0",
