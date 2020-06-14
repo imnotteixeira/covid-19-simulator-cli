@@ -16,6 +16,7 @@ const StateRepresentation = Object.freeze({
 
 // Does not render states like quarantined and stuff, because they are not a .state of the individual
 const getRepresentation = (individual) => {
+    if (individual.isDummy) return " ";
     if (individual.isHospitalized) return StateRepresentation.HOSPITALIZED;
     if (individual.isQuarantined) return StateRepresentation.QUARANTINED;
     return StateRepresentation[individual.state];
@@ -26,7 +27,7 @@ const displayMatrix = (m) => {
     for (let i = 0; i < config.MATRIX_SIDE; i++) {
         let str = "";
         for (let j = 0; j < config.MATRIX_SIDE; j++) {
-            str += `${getRepresentation(m[convertToLinearCoord([i, j])])} (${m[convertToLinearCoord([i, j])].zone}), `;
+            str += `${getRepresentation(m[convertToLinearCoord([i, j])])}, `;
         }
         console.info(str);
     }

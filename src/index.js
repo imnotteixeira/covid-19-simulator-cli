@@ -33,6 +33,7 @@ const options = (config.SIMULATION_PRESET) ? { ...SimulationPresets[config.SIMUL
     zoneIsolationBehavior: config.ZONE_ISOLATION_BEHAVIOR,
     zoneIsolationThreshold: config.ZONE_ISOLATION_THRESHOLD,
     zoneIsolationTimeout: config.ZONE_ISOLATION_TIMEOUT,
+    populationDensity: config.POPULATION_DENSITY,
 };
 
 const simulationData = init(options);
