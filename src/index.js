@@ -44,6 +44,7 @@ if (simulationData.population.length > 100) {
 
 MetricsService.subscribe("carrier-count");
 MetricsService.subscribe("dead-count");
+MetricsService.subscribe("dead-absolute-count");
 MetricsService.subscribe("cured-count");
 MetricsService.subscribe("hospitalized-count");
 MetricsService.subscribe("quarantined-count");
@@ -52,7 +53,12 @@ MetricsService.subscribe("r");
 MetricsService.subscribe("positive-test-count");
 MetricsService.subscribe("total-test-count");
 MetricsService.subscribe("confirmed-carrier-count");
-MetricsService.subscribe("carriers-history");
+MetricsService.subscribe("carrier-peak-percentage");
+MetricsService.subscribe("carrier-peak-time");
+MetricsService.subscribe("total-infected-count");
+MetricsService.subscribe("total-infected-percentage");
+MetricsService.subscribe("average-population-susceptibility");
+// MetricsService.subscribe("carriers-history");
 
 const renderMatrix = (simulationData) => {
     if (simulationData.population.length <= 100) {
